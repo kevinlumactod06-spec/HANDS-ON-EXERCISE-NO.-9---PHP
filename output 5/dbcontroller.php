@@ -1,3 +1,4 @@
+
 <?php
 
 class DBController {
@@ -5,7 +6,7 @@ class DBController {
     private $host = "localhost";
     private $user = "root";
     private $password = "";
-    private $database = "myfirstdb";
+    private $database = "faculty_db";
     private $conn;
 
     function __construct() {
@@ -20,6 +21,12 @@ class DBController {
             $this->database
         );
 
+        if (!$cnn) {
+            die("Database connection failed: " . mysqli_connect_error());
+        }
+
+        mysqli_set_charset($cnn, "utf8mb4");
+
         return $cnn;
     }
 
@@ -27,7 +34,7 @@ class DBController {
         $result = mysqli_query($this->conn, $query);
         $resultset = array();
 
-        if ($result) {
+        if ($result && $result instanceof mysqli_result) {
             while ($row = mysqli_fetch_assoc($result)) {
                 $resultset[] = $row;
             }
@@ -38,6 +45,11 @@ class DBController {
 
     function countRows($query) {
         $result = mysqli_query($this->conn, $query);
+
+        if (!$result) {
+            return 0;
+        }
+
         return mysqli_num_rows($result);
     }
 
