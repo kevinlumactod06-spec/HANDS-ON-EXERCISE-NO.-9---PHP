@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 30px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+fieldset {
+    width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+legend {
+    font-weight: bold;
+    color: #333;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    padding: 8px;
+}
+
+td:first-child {
+    font-weight: bold;
+    width: 150px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: white;
+}
+
+input[type="reset"] {
+    background-color: #ddd;
+    color: #333;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
+}
+
+input[type="reset"]:hover {
+    background-color: #bbb;
+}
+
+a {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
